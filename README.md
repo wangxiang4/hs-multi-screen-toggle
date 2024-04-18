@@ -1,57 +1,55 @@
-# Macos Hammerspoon 多显示器焦点切换配置
+# Macos Hammerspoon Multiple Monitor Operation Switching Configuration
 
-## 使用
+## Use
 
-1.安装Hammerspoon
+1.Install Hammerspoon
 ```shell
 brew install --cask hammerspoon
 ```
 
-2.在项目目录下执行如下命令,复制几个配置文件到 ~/.hammerspoon 目录下
+2.In The Project Directory Execute At Below Command, Copy a few Config File To `~/.hammerspoon` Directory
 ```shell
 cp -r ./init.lua ./config.lua ./modules ~/.hammerspoon
 ```
 
-3.手动点击 Hammerspoon Console -> Reload config 按钮加载配置文件
+3.Manually Click Hammerspoon Console -> Reload Config Button Loading Config File
 
 
-## 修饰键
-|           |  Key           |
-| --------- | -------------- |
+## Modifier Keys
+| Icon         | Key         |
+|--------------|-------------|
 | <kbd>⇧</kbd> | Shift       |
 | <kbd>⌃</kbd> | Control   	 |
-| <kbd>⌥</kbd> | Option 		 |
+| <kbd>⌥</kbd> | Option 		   |
 | <kbd>⌘</kbd> | Command   	 |
 
-## 功能
+## Function
 
-### 多显示器窗口管理
-#### 分屏操作
+### Multiple Monitor Window Management
+#### Split Screen Operate
 
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>←</kbd> 窗口左半边
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>→</kbd> 窗口右半边
+* <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>←</kbd> Window Left Half
+* <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>→</kbd> Window Right Half
 
-#### 多显示器操作
+#### Multiple Monitor Operate
 
-##### 移动鼠标
+##### Move Cursor
+* <kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>1</kbd> Will Cursor Move To 1 Monitor 
+* <kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>2</kbd> Will Cursor Move To 2 Monitor
 
-* <kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>←</kbd> 将光标移动到上一个显示器
-* <kbd>⌃</kbd><kbd>⌥</kbd> + <kbd>→</kbd> 将光标移动到下一个显示器
+##### Move Window
+* <kbd>⌘</kbd><kbd>⌥</kbd> + <kbd>1</kbd> Will Activity Window Move To 1 Monitor
+* <kbd>⌘</kbd><kbd>⌥</kbd> + <kbd>2</kbd> Will Activity Window Move To 2 Monitor
+* <kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>1</kbd> Will Activity Window Move To 1 Monitor And Maximize
+* <kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>2</kbd> Will Activity Window Move To 2 Monitor And Maximize
+* <kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>3</kbd> Will Activity Window Move To 3 Monitor And Maximize
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>M</kbd> Maximize Window
 
-##### 移动窗口
+### System Operate
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>L</kbd> Lock Screen
 
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>←</kbd> 将活动窗口移动到上一个显示器
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>→</kbd> 将活动窗口移动到下一个显示器
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>M</kbd> 最大化窗口
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>1</kbd> 将活动窗口移动到显示器1并最大化窗口
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>2</kbd> 将活动窗口移动到显示器2并最大化窗口
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>3</kbd> 将活动窗口移动到显示器3并最大化窗口
-
-### 系统操作
-
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>L</kbd> 锁屏
-
-### 快捷键启动应用程序
-
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>I</kbd> `iTerm终端`
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>W</kbd> `微信`
+### Application Shortcut Keys
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>I</kbd> `ITerminal`
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>W</kbd> `WeChet`
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>A</kbd> `Activity Monitor`
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>N</kbd> `Digital Color Mater`

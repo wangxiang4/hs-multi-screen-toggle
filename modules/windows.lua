@@ -38,22 +38,22 @@ function toggle_maximize()
 end
 
 -- 将活动窗口移动到上一个监视器
-hotkey.bind(option_shift, "Left", function()
+hotkey.bind(command_option, "1", function()
   window.focusedWindow():moveOneScreenWest()
 end)
 
 -- 将活动窗口移动到下一个监视器
-hotkey.bind(option_shift, "Right", function()
+hotkey.bind(command_option, "2", function()
   window.focusedWindow():moveOneScreenEast()
 end)
 
 -- 将光标移动到上一个监视器
-hotkey.bind(control_option, "Left", function ()
+hotkey.bind(control_option, "1", function ()
   focusScreen(window.focusedWindow():screen():previous())
 end)
 
 -- 将光标移动到下一个监视器
-hotkey.bind(control_option, "Right", function ()
+hotkey.bind(control_option, "2", function ()
   focusScreen(window.focusedWindow():screen():next())
 end)
 
@@ -64,11 +64,12 @@ end
 
 function focusScreen(screen)
   --在屏幕内获取窗口，从前到后排序，如果没有窗口显示桌面
-  local windows = fnutils.filter(
+  --manually get window focus
+  --[[local windows = fnutils.filter(
       window.orderedWindows(),
       fnutils.partial(isInScreen, screen))
   local windowToFocus = #windows > 0 and windows[1] or window.desktop()
-  windowToFocus:focus()
+  windowToFocus:focus()--]]
 
   -- 将光标移动到屏幕中心
   local pt = geometry.rectMidPoint(screen:fullFrame())
