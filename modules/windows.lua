@@ -20,8 +20,8 @@ hotkey.bind(command_control_option, "Right", function()
   window.focusedWindow():moveToUnit(layout.right50)
 end)
 
--- 最大化窗口
-hotkey.bind(command_control_option, 'M', function() toggle_maximize() end)
+-- 最大化窗口跟Little Snitch Network Monitor防火墙冲突
+-- hotkey.bind(command_control_option, 'M', function() toggle_maximize() end)
 
 -- 定义窗口最大化与正常大小切换缓存
 local frameCache = {}
@@ -37,26 +37,6 @@ function toggle_maximize()
     end
 end
 
--- 将活动窗口移动到上一个监视器
-hotkey.bind(command_option, "1", function()
-  window.focusedWindow():moveOneScreenWest()
-end)
-
--- 将活动窗口移动到下一个监视器
-hotkey.bind(command_option, "2", function()
-  window.focusedWindow():moveOneScreenEast()
-end)
-
--- 将光标移动到上一个监视器
-hotkey.bind(control_option, "1", function ()
-  focusScreen(window.focusedWindow():screen():previous())
-end)
-
--- 将光标移动到下一个监视器
-hotkey.bind(control_option, "2", function ()
-  focusScreen(window.focusedWindow():screen():next())
-end)
-
 -- 检查窗口是否在屏幕上
 function isInScreen(screen, win)
   return win:screen() == screen
@@ -64,7 +44,6 @@ end
 
 function focusScreen(screen)
   --在屏幕内获取窗口，从前到后排序，如果没有窗口显示桌面
-  --manually get window focus
   --[[local windows = fnutils.filter(
       window.orderedWindows(),
       fnutils.partial(isInScreen, screen))
@@ -87,20 +66,34 @@ moveto = function(win, n)
   end
 end
 
+-- 将光标移动到上一个监视器
+hotkey.bind(control_option, "1", function ()
+  focusScreen(window.focusedWindow():screen():previous())
+end)
+
+-- 将光标移动到下一个监视器
+hotkey.bind(control_option, "2", function ()
+  focusScreen(window.focusedWindow():screen():next())
+end)
+
+-- 将活动窗口移动到上一个监视器
+hotkey.bind(command_option, "1", function()
+  window.focusedWindow():moveOneScreenWest()
+end)
+
+-- 将活动窗口移动到下一个监视器
+hotkey.bind(command_option, "2", function()
+  window.focusedWindow():moveOneScreenEast()
+end)
+
 -- 将光标移动到监视器1并最大化窗口
-hotkey.bind(option_shift, "1", function()
+hotkey.bind(command_option_shift, "1", function()
   local win = window.focusedWindow()
   moveto(win, 1)
 end)
 
 -- 将光标移动到监视器2并最大化窗口
-hotkey.bind(option_shift, "2", function()
+hotkey.bind(command_option_shift, "2", function()
   local win = window.focusedWindow()
   moveto(win, 2)
-end)
-
--- 将光标移动到监视器3并最大化窗口
-hotkey.bind(option_shift, "3", function()
-  local win = window.focusedWindow()
-  moveto(win, 3)
 end)
